@@ -61,17 +61,12 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   const fetchProfile = async (userId: string) => {
     try {
-      // Using explicit type assertion with unknown as intermediate step
-      const result = await supabase
+      // Use direct type assertion to any to bypass TypeScript constraints
+      const { data, error } = await (supabase as any)
         .from('profiles')
         .select('*')
         .eq('id', userId)
         .single();
-        
-      const { data, error } = result as unknown as { 
-        data: Profile | null; 
-        error: { message: string } | null 
-      };
 
       if (error) {
         throw error;
@@ -186,18 +181,13 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     try {
       setAuthState(prev => ({ ...prev, isLoading: true, error: null }));
       
-      // Using explicit type assertion with unknown as intermediate step
-      const result = await supabase
+      // Use direct type assertion to any to bypass TypeScript constraints
+      const { data, error } = await (supabase as any)
         .from('profiles')
         .update(updates)
         .eq('id', authState.user.id)
         .select()
         .single();
-        
-      const { data, error } = result as unknown as { 
-        data: Profile | null; 
-        error: { message: string } | null 
-      };
       
       if (error) {
         throw error;
