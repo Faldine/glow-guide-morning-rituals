@@ -61,7 +61,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   const fetchProfile = async (userId: string) => {
     try {
-      // Using a more generic approach with type assertions to bypass type constraints
+      // Using type assertion to bypass TypeScript constraints
       const { data, error } = await (supabase as any)
         .from('profiles')
         .select('*')
@@ -181,7 +181,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     try {
       setAuthState(prev => ({ ...prev, isLoading: true, error: null }));
       
-      // Using a more generic approach with type assertions to bypass type constraints
+      // Using type assertion to bypass TypeScript constraints
       const { data, error } = await (supabase as any)
         .from('profiles')
         .update(updates)
