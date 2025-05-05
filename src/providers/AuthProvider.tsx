@@ -2,13 +2,13 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
-import { AuthState } from '@/types/app.types';
+import { AuthState, Profile } from '@/types/app.types';
 
 interface AuthContextType extends AuthState {
   signUp: (email: string, password: string, firstName: string, lastName: string) => Promise<void>;
   signIn: (email: string, password: string) => Promise<void>;
   signOut: () => Promise<void>;
-  updateProfile: (updates: Partial<AuthState['profile']>) => Promise<void>;
+  updateProfile: (updates: Partial<Profile>) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -61,6 +61,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   const fetchProfile = async (userId: string) => {
     try {
+      // Utiliser RPCQL ou REST sans type fort pour contourner la limitation actuelle des types
       const { data, error } = await supabase
         .from('profiles')
         .select('*')
@@ -71,7 +72,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         throw error;
       }
 
-      setAuthState(prev => ({ ...prev, profile: data }));
+      setAuthState(prev => ({ ...prev, profile: data as Profile }));
     } catch (error) {
       console.error('Error fetching profile:', error);
       setAuthState(prev => ({ ...prev, error: 'Failed to fetch profile' }));
@@ -174,12 +175,13 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     }
   };
 
-  const updateProfile = async (updates: Partial<AuthState['profile']>) => {
+  const updateProfile = async (updates: Partial<Profile>) => {
     if (!authState.user) return;
     
     try {
       setAuthState(prev => ({ ...prev, isLoading: true, error: null }));
       
+      // Utiliser RPCQL ou REST sans type fort pour contourner la limitation actuelle des types
       const { data, error } = await supabase
         .from('profiles')
         .update(updates)
@@ -193,7 +195,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
       setAuthState(prev => ({
         ...prev,
-        profile: data,
+        profile: data as Profile,
       }));
 
       toast({
