@@ -61,8 +61,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   const fetchProfile = async (userId: string) => {
     try {
-      // Utiliser RPCQL ou REST sans type fort pour contourner la limitation actuelle des types
-      const { data, error } = await supabase
+      // Using a more generic approach with type assertions to bypass type constraints
+      const { data, error } = await (supabase as any)
         .from('profiles')
         .select('*')
         .eq('id', userId)
@@ -181,8 +181,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     try {
       setAuthState(prev => ({ ...prev, isLoading: true, error: null }));
       
-      // Utiliser RPCQL ou REST sans type fort pour contourner la limitation actuelle des types
-      const { data, error } = await supabase
+      // Using a more generic approach with type assertions to bypass type constraints
+      const { data, error } = await (supabase as any)
         .from('profiles')
         .update(updates)
         .eq('id', authState.user.id)
