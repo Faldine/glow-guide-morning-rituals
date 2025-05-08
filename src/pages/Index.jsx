@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import Features from "../components/Features";
 import RoutinesShowcase from "../components/RoutinesShowcase";
-import TestimonialsSection from "../components/TestimonialsSection";
+import StatisticsSection from "../components/StatisticsSection";
 import CallToAction from "../components/CallToAction";
 import Footer from "../components/Footer";
 import '../styles/index.css';
@@ -17,7 +17,7 @@ const Index = () => {
         <HeroSection />
         <Features />
         <RoutinesShowcase />
-        <TestimonialsSection />
+        <StatisticsSection />
         <CallToAction />
       </main>
       <Footer />
