@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Award, Clock, Users, Smile } from 'lucide-react';
+import { Award, Clock, ChartBar, Smile } from 'lucide-react';
 import '../styles/StatisticsSection.css';
 
 const StatisticsSection = () => {
@@ -12,10 +12,10 @@ const StatisticsSection = () => {
       description: "Sur votre routine matinale"
     },
     {
-      icon: Users,
-      value: "15K+",
-      label: "Utilisateurs",
-      description: "Qui améliorent leur quotidien"
+      icon: ChartBar,
+      value: "87%",
+      label: "Efficacité",
+      description: "Organisation optimisée des tâches"
     },
     {
       icon: Award,
