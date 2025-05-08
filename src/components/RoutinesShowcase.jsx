@@ -27,7 +27,7 @@ const RoutinesShowcase = () => {
         { name: "Yoga doux", time: "10 min", desc: "Pour réveiller le corps en douceur" },
         { name: "Affirmations positives", time: "2 min", desc: "Pour un état d'esprit positif" },
       ],
-      image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=600&h=600&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&h=600&fit=crop&q=80",
     },
     self: {
       title: "Développement personnel",
