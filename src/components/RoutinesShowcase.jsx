@@ -16,7 +16,7 @@ const RoutinesShowcase = () => {
         { name: "Crème hydratante", time: "1 min", desc: "Non comédogène et légère" },
         { name: "Protection solaire", time: "30 sec", desc: "SPF 50 pour une protection optimale" },
       ],
-      image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=600&h=600&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=600&fit=crop&q=80",
     },
     morning: {
       title: "Routine matinale",

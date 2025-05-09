@@ -1,10 +1,8 @@
+import React, { useState } from 'react';
+import { Play } from 'lucide-react';
+import '../styles/RoutinesShowcase.css';
 
-import React, { useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Button } from "@/components/ui/button";
-import { Play } from "lucide-react";
-
-const RoutinesShowcase: React.FC = () => {
+const RoutinesShowcase = () => {
   const [activeTab, setActiveTab] = useState("skincare");
 
   const routines = {
@@ -17,7 +15,7 @@ const RoutinesShowcase: React.FC = () => {
         { name: "Crème hydratante", time: "1 min", desc: "Non comédogène et légère" },
         { name: "Protection solaire", time: "30 sec", desc: "SPF 50 pour une protection optimale" },
       ],
-      image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
     },
     morning: {
       title: "Routine matinale",
@@ -43,70 +41,80 @@ const RoutinesShowcase: React.FC = () => {
     },
   };
 
-  const currentRoutine = routines[activeTab as keyof typeof routines];
+  const currentRoutine = routines[activeTab];
 
   return (
-    <section id="routines" className="py-20 px-4">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="section-title text-center">
+    <section id="routines" className="routines-showcase">
+      <div className="routines-container">
+        <h2 className="routines-title">
           Des routines <span className="gradient-text">adaptées à vos besoins</span>
         </h2>
-        <p className="section-subtitle text-center">
+        <p className="routines-subtitle">
           Découvrez nos routines personnalisées qui s'adaptent à votre style de vie, à vos préférences et à vos objectifs de bien-être.
         </p>
 
-        <Tabs defaultValue="skincare" className="w-full" onValueChange={(value) => setActiveTab(value)}>
-          <TabsList className="grid w-full grid-cols-3 mb-12">
-            <TabsTrigger value="skincare" className="text-lg">Soins de la peau</TabsTrigger>
-            <TabsTrigger value="morning" className="text-lg">Routine matinale</TabsTrigger>
-            <TabsTrigger value="self" className="text-lg">Développement personnel</TabsTrigger>
-          </TabsList>
+        <div className="tabs-container">
+          <div className="tabs-list">
+            <button 
+              className={`tab-button ${activeTab === "skincare" ? "active" : ""}`}
+              onClick={() => setActiveTab("skincare")}
+            >
+              Soins de la peau
+            </button>
+            <button 
+              className={`tab-button ${activeTab === "morning" ? "active" : ""}`}
+              onClick={() => setActiveTab("morning")}
+            >
+              Routine matinale
+            </button>
+            <button 
+              className={`tab-button ${activeTab === "self" ? "active" : ""}`}
+              onClick={() => setActiveTab("self")}
+            >
+              Développement personnel
+            </button>
+          </div>
           
-          {Object.entries(routines).map(([key, routine]) => (
-            <TabsContent key={key} value={key} className="animate-fade-in">
-              <div className="flex flex-col lg:flex-row gap-12 items-center">
-                <div className="lg:w-1/2 order-2 lg:order-1">
-                  <h3 className="text-2xl md:text-3xl font-serif font-semibold mb-3">{routine.title}</h3>
-                  <p className="text-glow-gray mb-8">{routine.description}</p>
+          <div className="tabs-content">
+            <div className={`tab-content ${activeTab === currentRoutine.title ? "active" : ""}`}>
+              <div className="routine-content">
+                <div className="routine-info">
+                  <h3 className="routine-title">{currentRoutine.title}</h3>
+                  <p className="routine-description">{currentRoutine.description}</p>
                   
-                  <div className="space-y-4 mb-8">
-                    {routine.steps.map((step, index) => (
-                      <div key={index} className="flex items-start p-4 rounded-xl bg-white shadow-sm border border-glow-purple/10">
-                        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-glow-purple/10 flex items-center justify-center text-glow-purple font-medium">
-                          {index + 1}
-                        </div>
-                        <div className="ml-4">
-                          <div className="flex items-center">
-                            <h4 className="font-medium">{step.name}</h4>
-                            <span className="ml-2 px-2 py-0.5 bg-glow-purple/10 text-glow-purple text-xs rounded-full">
-                              {step.time}
-                            </span>
+                  <div className="routine-steps">
+                    {currentRoutine.steps.map((step, index) => (
+                      <div key={index} className="routine-step">
+                        <div className="step-number">{index + 1}</div>
+                        <div className="step-content">
+                          <div className="step-header">
+                            <h4 className="step-name">{step.name}</h4>
+                            <span className="step-time">{step.time}</span>
                           </div>
-                          <p className="text-sm text-glow-gray mt-1">{step.desc}</p>
+                          <p className="step-description">{step.desc}</p>
                         </div>
                       </div>
                     ))}
                   </div>
                   
-                  <Button className="glow-button">
-                    <Play size={18} className="mr-2" /> Essayer cette routine
-                  </Button>
+                  <button className="glow-button">
+                    <Play size={18} className="button-icon" /> Essayer cette routine
+                  </button>
                 </div>
-                <div className="lg:w-1/2 order-1 lg:order-2">
-                  <div className="p-2 bg-gradient-to-br from-glow-purple to-glow-blue rounded-3xl shadow-xl">
-                    <div className="aspect-square w-full max-w-md mx-auto overflow-hidden rounded-2xl">
-                      <img
-                        src={routine.image}
-                        alt={routine.title}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
+                <div className="routine-image-container">
+                  <div className="routine-image-wrapper">
+                    <img
+                      src={currentRoutine.image}
+                      alt={currentRoutine.title}
+                      className="routine-image"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
               </div>
-            </TabsContent>
-          ))}
-        </Tabs>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
