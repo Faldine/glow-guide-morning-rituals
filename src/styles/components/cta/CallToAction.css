@@ -1,0 +1,127 @@
+
+.cta-section {
+  padding: 5rem 1rem;
+}
+
+.cta-container {
+  max-width: 1024px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta-card {
+  background-image: linear-gradient(to right, rgba(155, 135, 245, 0.2), rgba(255, 222, 226, 0.2));
+  border-radius: 1.5rem;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-bg {
+  position: absolute;
+  width: 16rem;
+  height: 16rem;
+  border-radius: 9999px;
+  filter: blur(3rem);
+  z-index: -10;
+}
+
+.cta-bg-purple {
+  top: 0;
+  right: 0;
+  background-color: rgba(155, 135, 245, 0.2);
+}
+
+.cta-bg-pink {
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 222, 226, 0.2);
+}
+
+.cta-title {
+  font-size: 2.25rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.cta-description {
+  font-size: 1.125rem;
+  color: #8E9196;
+  margin-bottom: 2rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.glow-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  background-color: #9b87f5;
+  color: white;
+  border-radius: 9999px;
+  font-size: 1.125rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.glow-button:hover {
+  box-shadow: 0 10px 15px -3px rgba(155, 135, 245, 0.3);
+  transform: scale(1.05);
+}
+
+.outline-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  background-color: transparent;
+  color: #9b87f5;
+  border: 1px solid #9b87f5;
+  border-radius: 9999px;
+  font-size: 1.125rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.outline-button:hover {
+  background-color: rgba(155, 135, 245, 0.05);
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #9b87f5, #7E69AB);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (min-width: 640px) {
+  .cta-buttons {
+    flex-direction: row;
+  }
+  .cta-card {
+    padding: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .cta-title {
+    font-size: 2.5rem;
+  }
+  .cta-description {
+    font-size: 1.25rem;
+  }
+}

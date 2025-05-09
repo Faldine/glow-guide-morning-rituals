@@ -1,0 +1,112 @@
+
+.statistics-section {
+  padding: 5rem 1rem;
+  background-image: linear-gradient(to bottom, rgba(155, 135, 245, 0.05), white);
+}
+
+.statistics-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.statistics-title {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1A1F2C;
+  text-align: center;
+}
+
+.statistics-subtitle {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: #8E9196;
+  margin-bottom: 3rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.statistics-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+}
+
+.statistic-card {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(0.75rem);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.statistic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px -5px rgba(155, 135, 245, 0.2);
+}
+
+.statistic-icon {
+  background-color: rgba(155, 135, 245, 0.1);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: #9b87f5;
+}
+
+.statistic-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #9b87f5;
+  margin-bottom: 0.5rem;
+}
+
+.statistic-label {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1A1F2C;
+}
+
+.statistic-description {
+  color: #8E9196;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #9b87f5, #7E69AB);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (min-width: 640px) {
+  .statistics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .statistics-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .statistics-title {
+    font-size: 3rem;
+    line-height: 1;
+  }
+  
+  .statistics-subtitle {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}

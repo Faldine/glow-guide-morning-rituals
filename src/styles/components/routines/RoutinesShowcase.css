@@ -1,0 +1,244 @@
+
+.routines-showcase {
+  padding: 5rem 1rem;
+}
+
+.routines-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.routines-title {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1A1F2C;
+  text-align: center;
+}
+
+.routines-subtitle {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: #8E9196;
+  margin-bottom: 3rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.tabs-container {
+  width: 100%;
+}
+
+.tabs-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+}
+
+.tab-button {
+  padding: 0.75rem;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid rgba(155, 135, 245, 0.2);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tab-button:hover {
+  background-color: rgba(155, 135, 245, 0.05);
+}
+
+.tab-button.active {
+  background-color: rgba(155, 135, 245, 0.1);
+  border-color: rgba(155, 135, 245, 0.5);
+  color: #9b87f5;
+}
+
+.tabs-content {
+  position: relative;
+}
+
+.tab-content {
+  animation: fadeIn 0.7s ease-out forwards;
+}
+
+.routine-content {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 3rem;
+  align-items: center;
+}
+
+.routine-info {
+  width: 100%;
+}
+
+.routine-title {
+  font-size: 1.75rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.routine-description {
+  color: #8E9196;
+  margin-bottom: 2rem;
+}
+
+.routine-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.routine-step {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(155, 135, 245, 0.1);
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: rgba(155, 135, 245, 0.1);
+  color: #9b87f5;
+  font-weight: 500;
+  margin-right: 1rem;
+}
+
+.step-header {
+  display: flex;
+  align-items: center;
+}
+
+.step-name {
+  font-weight: 500;
+  margin-right: 0.5rem;
+}
+
+.step-time {
+  padding: 0.125rem 0.5rem;
+  background-color: rgba(155, 135, 245, 0.1);
+  color: #9b87f5;
+  font-size: 0.75rem;
+  border-radius: 9999px;
+}
+
+.step-description {
+  font-size: 0.875rem;
+  color: #8E9196;
+  margin-top: 0.25rem;
+}
+
+.routine-image-container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.routine-image-wrapper {
+  padding: 0.5rem;
+  background-image: linear-gradient(to bottom right, #9b87f5, #D3E4FD);
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.routine-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.glow-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  background-color: #9b87f5;
+  color: white;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.glow-button:hover {
+  box-shadow: 0 10px 15px -3px rgba(155, 135, 245, 0.3);
+  transform: scale(1.05);
+}
+
+.button-icon {
+  margin-right: 0.5rem;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .tabs-list {
+    gap: 1rem;
+  }
+  
+  .tab-button {
+    font-size: 1.125rem;
+    padding: 1rem;
+  }
+  
+  .routines-title {
+    font-size: 3rem;
+    line-height: 1;
+  }
+  
+  .routines-subtitle {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .routine-content {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  
+  .routine-info {
+    width: 50%;
+    order: 1;
+  }
+  
+  .routine-image-container {
+    width: 50%;
+    order: 2;
+  }
+  
+  .routine-title {
+    font-size: 2rem;
+  }
+}

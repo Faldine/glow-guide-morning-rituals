@@ -1,17 +1,17 @@
 
 import React from "react";
-import Navbar from "../components/Navbar";
-import HeroSection from "../components/HeroSection";
-import Features from "../components/Features";
-import RoutinesShowcase from "../components/RoutinesShowcase";
-import StatisticsSection from "../components/StatisticsSection";
-import CallToAction from "../components/CallToAction";
-import Footer from "../components/Footer";
-import '../styles/index.css';
+import Navbar from "../components/navbar/Navbar";
+import HeroSection from "../components/hero/HeroSection";
+import Features from "../components/features/Features";
+import RoutinesShowcase from "../components/routines/RoutinesShowcase";
+import StatisticsSection from "../components/statistics/StatisticsSection";
+import CallToAction from "../components/cta/CallToAction";
+import Footer from "../components/footer/Footer";
+import '../styles/pages/Index.css';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="main-layout">
       <Navbar />
       <main>
         <HeroSection />
