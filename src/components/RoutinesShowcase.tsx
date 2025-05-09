@@ -17,7 +17,7 @@ const RoutinesShowcase: React.FC = () => {
         { name: "Crème hydratante", time: "1 min", desc: "Non comédogène et légère" },
         { name: "Protection solaire", time: "30 sec", desc: "SPF 50 pour une protection optimale" },
       ],
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+      image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901",
     },
     morning: {
       title: "Routine matinale",
@@ -28,7 +28,7 @@ const RoutinesShowcase: React.FC = () => {
         { name: "Yoga doux", time: "10 min", desc: "Pour réveiller le corps en douceur" },
         { name: "Affirmations positives", time: "2 min", desc: "Pour un état d'esprit positif" },
       ],
-      image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843",
+      image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
     },
     self: {
       title: "Développement personnel",
@@ -39,7 +39,7 @@ const RoutinesShowcase: React.FC = () => {
         { name: "Visualisation", time: "3 min", desc: "Pour définir vos intentions" },
         { name: "Gratitude", time: "2 min", desc: "Pour cultiver la reconnaissance" },
       ],
-      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+      image: "https://images.unsplash.com/photo-1501854140801-50d01698950b",
     },
   };
 
