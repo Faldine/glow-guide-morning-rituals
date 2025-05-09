@@ -28,7 +28,7 @@ const RoutinesShowcase: React.FC = () => {
         { name: "Yoga doux", time: "10 min", desc: "Pour réveiller le corps en douceur" },
         { name: "Affirmations positives", time: "2 min", desc: "Pour un état d'esprit positif" },
       ],
-      image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
+      image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e",
     },
     self: {
       title: "Développement personnel",
