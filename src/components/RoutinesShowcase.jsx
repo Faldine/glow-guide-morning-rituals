@@ -16,7 +16,7 @@ const RoutinesShowcase = () => {
         { name: "Crème hydratante", time: "1 min", desc: "Non comédogène et légère" },
         { name: "Protection solaire", time: "30 sec", desc: "SPF 50 pour une protection optimale" },
       ],
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=600&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=600&h=600&fit=crop&q=80",
     },
     morning: {
       title: "Routine matinale",
@@ -27,7 +27,7 @@ const RoutinesShowcase = () => {
         { name: "Yoga doux", time: "10 min", desc: "Pour réveiller le corps en douceur" },
         { name: "Affirmations positives", time: "2 min", desc: "Pour un état d'esprit positif" },
       ],
-      image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&h=600&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=600&h=600&fit=crop&q=80",
     },
     self: {
       title: "Développement personnel",
