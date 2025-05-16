@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Timer, Music } from 'lucide-react';
-import './Features.css';
+import '../../styles/components/features/Features.css';
 
 const Features = () => {
   const features = [

@@ -3,6 +3,13 @@
 @import './utils.css';
 @import './pages/Index.css';
 @import './pages/NotFound.css';
+@import './components/navbar/Navbar.css';
+@import './components/hero/HeroSection.css';
+@import './components/features/Features.css';
+@import './components/routines/RoutinesShowcase.css';
+@import './components/statistics/StatisticsSection.css';
+@import './components/cta/CallToAction.css';
+@import './components/footer/Footer.css';
 
 :root {
   --color-primary: #9b87f5;
@@ -51,4 +58,43 @@ button {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #9b87f5, #7E69AB);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glow-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  font-weight: 500;
+  box-shadow: 0 4px 6px -1px rgba(155, 135, 245, 0.2);
+  transition: all 0.3s ease;
+}
+
+.glow-button:hover {
+  box-shadow: 0 10px 15px -3px rgba(155, 135, 245, 0.3);
+  transform: translateY(-2px);
+}
+
+.outline-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.outline-button:hover {
+  background-color: rgba(155, 135, 245, 0.1);
 }
